@@ -117,6 +117,11 @@ int WiFiClass::begin(char* ssid, const char *passphrase)
     return status;
 }
 
+int WiFiClass::setPassphrase(char* ssid, const char *passphrase)  
+{ 
+  	return WiFiDrv::wifiSetPassphrase(ssid, strlen(ssid), passphrase, strlen(passphrase)); 
+} 
+
 void WiFiClass::config(IPAddress local_ip)
 {
 	WiFiDrv::config(1, (uint32_t)local_ip, 0, 0);

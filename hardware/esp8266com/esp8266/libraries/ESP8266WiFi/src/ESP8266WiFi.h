@@ -58,6 +58,15 @@ public:
     int begin(char* ssid, char *passphrase = NULL, int32_t channel = 0, uint8_t bssid[6] = NULL);
 
 
+    /**
+     * Set the SSID and passphrase to allow non-blocking wifi connection to be established
+     * @param ssid const char*          Pointer to the SSID string.
+     * @param passphrase const char *   Optional. Passphrase. Valid characters in a passphrase must be between ASCII 32-126 (decimal).
+    */
+    int setPassphrase(char* ssid, const char* passphrase = NULL);
+
+
+
    /* Wait for Wifi connection to reach a result
     * returns the status reached or disconnect if STA is off
     */
